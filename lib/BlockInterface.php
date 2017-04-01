@@ -14,7 +14,7 @@ namespace Saf\PageArchitect;
 
 use Saf\PageArchitect\Block\Type\BlockTypeInterface;
 
-interface BlockInterface extends \ArrayAccess, \Traversable, \Countable
+interface BlockInterface extends \ArrayAccess, \Countable
 {
     /**
      * Returns the name of the block.

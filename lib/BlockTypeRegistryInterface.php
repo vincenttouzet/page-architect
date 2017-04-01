@@ -19,12 +19,11 @@ interface BlockTypeRegistryInterface
     /**
      * Register a block type.
      *
-     * @param string             $name Name of the block type. Must be unique.
      * @param BlockTypeInterface $type The type instance
      *
      * @return $this
      */
-    public function register($name, BlockTypeInterface $type);
+    public function register(BlockTypeInterface $type);
 
     /**
      * Returns whether a block type of the given name is registered.

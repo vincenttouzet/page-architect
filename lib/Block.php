@@ -103,24 +103,6 @@ class Block implements BlockInterface
     }
 
     /**
-     * @return BlockFactoryInterface
-     */
-    public function getFactory()
-    {
-        return $this->factory;
-    }
-
-    /**
-     * @param BlockFactoryInterface $factory
-     * @return self
-     */
-    public function setFactory($factory)
-    {
-        $this->factory = $factory;
-        return $this;
-    }
-
-    /**
      * @return BlockTypeInterface
      */
     public function getType()

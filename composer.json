@@ -17,5 +17,13 @@
         "psr-4": {
             "Saf\\PageArchitect\\": "lib"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Saf\\PageArchitect\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
     }
 }

@@ -14,7 +14,7 @@ namespace Saf\PageArchitect\Block\Type;
 use Saf\PageArchitect\BlockInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-abstract class BaseType implements BlockTypeInterface
+abstract class AbstractType implements BlockTypeInterface
 {
     /**
      * {@inheritdoc}

@@ -13,6 +13,7 @@ namespace Saf\PageArchitect;
 
 
 use Saf\PageArchitect\Block\Type\BlockTypeInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class BlockFactory implements BlockFactoryInterface
 {
@@ -43,6 +44,13 @@ class BlockFactory implements BlockFactoryInterface
         $block->setType($type);
 
         $types = $this->registry->getInheritedTypes(get_class($type));
+
+        $resolver = new OptionsResolver();
+        // configure options
+        foreach ($types as $blockType) {
+            $blockType->configureOptions($resolver);
+        }
+        $options = $resolver->resolve($options);
 
         // call block types createBlock method
         foreach ($types as $blockType) {

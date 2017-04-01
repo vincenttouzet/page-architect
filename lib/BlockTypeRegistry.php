@@ -23,9 +23,9 @@ class BlockTypeRegistry implements BlockTypeRegistryInterface
     /**
      * {@inheritdoc}
      */
-    public function register($name, BlockTypeInterface $blockType)
+    public function register(BlockTypeInterface $blockType)
     {
-        $this->registry[$name] = $blockType;
+        $this->registry[$blockType->getName()] = $blockType;
     }
 
     /**
@@ -50,7 +50,7 @@ class BlockTypeRegistry implements BlockTypeRegistryInterface
             // try to create type
             if (class_exists($name)) {
                 $type = new $name();
-                $this->register($name, $type);
+                $this->register($type);
             } else {
                 throw new TypeNotRegisteredException($name);
             }

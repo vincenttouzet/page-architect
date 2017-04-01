@@ -15,7 +15,7 @@ namespace Saf\PageArchitect\Block\Type;
 use Saf\PageArchitect\BlockInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class BlockType extends BaseType
+class BlockType extends AbstractType
 {
     public function createBlock(BlockInterface $block, array $options = [])
     {
