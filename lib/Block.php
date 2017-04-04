@@ -257,6 +257,10 @@ class Block implements BlockInterface
             $child = $this->factory->createBlock($child, $type, $options);
         }
 
+        if (!in_array($child->getType()->getName(), $this->getType()->getAllowedChildTypes())) {
+            throw new BlockTypeNotAllowedException($child->getType()->getName(), $this->getType());
+        }
+
         $child->setParent($this);
         $this->children[$child->getName()] = $child;
 

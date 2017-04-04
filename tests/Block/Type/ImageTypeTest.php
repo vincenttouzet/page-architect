@@ -11,6 +11,7 @@
 
 namespace Tests\Saf\PageArchitect\Block\Type;
 
+use Saf\PageArchitect\Block\Type\BlockType;
 use Saf\PageArchitect\Block\Type\ImageType;
 use Saf\PageArchitect\BlockFactory;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -45,7 +46,7 @@ class ImageTypeTest extends \PHPUnit_Framework_TestCase
         $resolver = new OptionsResolver();
         $this->type->configureOptions($resolver);
 
-        $options = $resolver->resolve();
+        $resolver->resolve();
     }
 
     public function testCreateBlock()
@@ -56,5 +57,18 @@ class ImageTypeTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $this->assertEquals('http://example.com/img.jpg', $block->getExtra('image_uri'));
+    }
+
+    /**
+     * @expectedException \Saf\PageArchitect\BlockTypeNotAllowedException
+     */
+    public function testAaddChild()
+    {
+        $factory = new BlockFactory();
+        $block = $factory->createBlock('image', ImageType::class, [
+            'image_uri' => 'http://example.com/img.jpg',
+        ]);
+
+        $block->add('sub', BlockType::class);
     }
 }

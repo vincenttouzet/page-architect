@@ -24,6 +24,11 @@ interface BlockInterface extends \ArrayAccess, \Countable
     public function getName();
 
     /**
+     * @return BlockTypeInterface
+     */
+    public function getType();
+
+    /**
      * Set the parent block.
      *
      * @param BlockInterface|null $parent
@@ -135,6 +140,8 @@ interface BlockInterface extends \ArrayAccess, \Countable
      * @param array                     $options
      *
      * @return self
+     *
+     * @throws \Saf\PageArchitect\BlockTypeNotAllowedException when trying to add a child with a type not allowed
      */
     public function add($child, $type = null, array $options = []);
 
