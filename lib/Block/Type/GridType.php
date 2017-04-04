@@ -31,7 +31,7 @@ class GridType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired('column_count');
-        $resolver->setAllowedTypes('column_count', ['array', 'string']);
+        $resolver->setAllowedTypes('column_count', ['array', 'string', 'int']);
     }
 
     public function getAllowedChildTypes()

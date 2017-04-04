@@ -39,6 +39,6 @@ class GridColumnType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired('column_width');
-        $resolver->setAllowedTypes('column_width', ['array', 'string']);
+        $resolver->setAllowedTypes('column_width', ['array', 'string', 'int']);
     }
 }
