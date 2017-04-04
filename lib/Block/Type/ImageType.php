@@ -16,11 +16,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ImageType extends AbstractType
 {
-    public function createBlock(BlockInterface $block, array $options = [])
-    {
-        $block->addExtra('image_uri', $options['image_uri']);
-    }
-
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired('image_uri');

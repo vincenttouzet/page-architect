@@ -21,7 +21,13 @@ class BlockType extends AbstractType
     {
         $block->setDisplay($options['display']);
         $block->setAttributes($options['attributes']);
-        $block->setExtras($options['extras']);
+        $extras = $options['extras'];
+        unset($options['display']);
+        unset($options['attributes']);
+        unset($options['extras']);
+        // add other options to extras
+        $extras = array_merge($extras, $options);
+        $block->setExtras($extras);
     }
 
     public function configureOptions(OptionsResolver $resolver)
