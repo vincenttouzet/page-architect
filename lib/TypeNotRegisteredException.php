@@ -11,12 +11,10 @@
 
 namespace Saf\PageArchitect;
 
-
 class TypeNotRegisteredException extends \Exception
 {
     public function __construct($name = "", $code = 0, $previous = null)
     {
         parent::__construct(sprintf('The block type "%s" is not registered yet.', $name), $code, $previous);
     }
-
 }

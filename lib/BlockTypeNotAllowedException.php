@@ -11,7 +11,6 @@
 
 namespace Saf\PageArchitect;
 
-
 use Saf\PageArchitect\Block\Type\BlockTypeInterface;
 
 class BlockTypeNotAllowedException extends \Exception

@@ -11,7 +11,6 @@
 
 namespace Saf\PageArchitect\Theme;
 
-
 use Saf\PageArchitect\Block;
 use Saf\PageArchitect\Block\Type\BlockTypeInterface;
 

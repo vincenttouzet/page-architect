@@ -21,7 +21,7 @@ class BlockFactoryTest extends \PHPUnit_Framework_TestCase
         $factory = new BlockFactory();
 
         $block = $factory->createBlock('my_block', BlockType::class, [
-            'display' => true,
+            'display'    => true,
             'attributes' => [
                 'class' => 'my-block'
             ],

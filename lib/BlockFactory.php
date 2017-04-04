@@ -11,7 +11,6 @@
 
 namespace Saf\PageArchitect;
 
-
 use Saf\PageArchitect\Block\Type\BlockTypeInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

@@ -11,7 +11,6 @@
 
 namespace Saf\PageArchitect;
 
-
 use Saf\PageArchitect\Renderer\RendererInterface;
 use Saf\PageArchitect\Theme\ThemeInterface;
 
